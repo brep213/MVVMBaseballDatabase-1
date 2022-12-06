@@ -46,7 +46,7 @@ namespace MVVMBaseballPitchCounter.ViewModels
             bool saveIt = await Application.Current.MainPage.DisplayAlert("New Pitcher?", "Save and clear pitcher data?", "Yes", "No");
 			if (saveIt)
 			{
-				
+				App.pitchDbase.InsertPitcher(pitcher);//write to the database
 				pitcher.Name = null;
 				pitcher.Balls = 0;
 				pitcher.Strikes = 0;

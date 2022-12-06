@@ -19,7 +19,8 @@ public static class MauiProgram
 
 		//add this
 		//builds the file within the data storage for the app
-		
+		string dbPath = System.IO.Path.Combine(FileSystem.AppDataDirectory, "pitcher.db3");
+		builder.Services.AddSingleton<PitcherDatabase>(d => ActivatorUtilities.CreateInstance<PitcherDatabase>(d,dbPath));
 
 
         return builder.Build();

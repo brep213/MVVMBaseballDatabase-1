@@ -4,12 +4,12 @@ namespace MVVMBaseballPitchCounter;
 
 public partial class App : Application
 {
-	
-	public App()
+	public static PitcherDatabase pitchDbase { get; set; }
+	public App(PitcherDatabase database)
 	{
 		InitializeComponent();
 
 		MainPage = new AppShell();
-		
+		pitchDbase= database;
 	}
 }

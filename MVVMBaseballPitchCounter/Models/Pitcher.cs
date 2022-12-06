@@ -4,24 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
+using SQLite;
 
 
 namespace MVVMBaseballPitchCounter.Models
 {
-
+	[Table("Pitcher")]
     public class Pitcher:INotifyPropertyChanged
     {
-		
+		[PrimaryKey, AutoIncrement]
+		public int PitcherPk {  get; set; }
 		private String _name;
-		
-		public String Name
+        
+		[MaxLength(100)]
+        public String Name
 		{
 			get { return _name; }
 			set { _name = value;
 				OnPropertyChanged("Name");
 			}
 		}
-
+		
 		private DateTime _gameDate;
 
 		
